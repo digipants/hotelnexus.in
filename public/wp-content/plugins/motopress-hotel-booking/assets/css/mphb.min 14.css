@@ -7,7 +7,7 @@
 }
 
 .mphb-preloader {
-    background-image: url(../../images/loading.gif?ver=3.3.0);
+    background-image: url(../../images/loading.gif);
     width: 20px;
     height: 20px;
     display: inline-block
@@ -111,15 +111,19 @@
     .mphb_sc_availability_calendar-wrapper .mphb-calendar[data-monthstoshow$="1"] .datepick-month {
         width: 100%
     }
+
     .mphb_sc_availability_calendar-wrapper .mphb-calendar[data-monthstoshow$="2"] .datepick-month {
         width: 50%
     }
+
     .mphb_sc_availability_calendar-wrapper .mphb-calendar[data-monthstoshow$="3"] .datepick-month {
         width: 33.33%
     }
+
     .mphb_sc_availability_calendar-wrapper .mphb-calendar[data-monthstoshow$="4"] .datepick-month {
         width: 25%
     }
+
     .mphb_sc_availability_calendar-wrapper .mphb-calendar[data-monthstoshow$="5"] .datepick-month {
         width: 20%
     }

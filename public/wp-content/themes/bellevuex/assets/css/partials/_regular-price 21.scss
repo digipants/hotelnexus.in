@@ -1,0 +1,13 @@
+.mphb-regular-price {
+  strong {
+    font-weight: 400;
+  }
+  .single-mphb_room_type & {
+    margin: 2.6em 0 4em;
+  }
+  .mphb-price {
+    @include font-size($font-size__h5-px);
+    line-height: (28/20);
+    font-weight: 600;
+  }
+}

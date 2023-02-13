@@ -1,0 +1,138 @@
+
+
+/* Date Picker */
+$themo-icon-pack:"themovation-icons" !important;
+$fa-var-chevron-right:"c";
+$fa-var-chevron-left:"a";
+$mphb-datepick-month-header-transform:uppercase;
+
+$color__gray:#333;
+$font-size__sm:12px;
+$font-size__base:16px;
+$line-height__sm:14px;
+$font-size__h1-px:30px;
+$line-height__h1:1.2;
+$screen-sm-min:48em;
+$font-size__h5-px:20px;
+
+$color__brand:#ff5a5f;
+
+$font-size__h4-px:22px;
+$font-size__h3-px:24px;
+$line-height__h3:1.25;
+
+$font__header: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$color__gray-base:#e0e0e0;
+
+$margin-bottom__main-xs:1.5em;
+$margin-bottom__main:1.75em;
+
+
+@mixin background-size($property) {
+  background-size: $property $property;
+}
+
+@mixin font-size($property) {
+  font-size:$property;
+}
+
+@mixin box_shadow($property) {
+  -moz-box-shadow: $property;
+  -webkit-box-shadow: $property;
+  box-shadow: $property;
+}
+
+@mixin transition($background, $color) {
+  -moz-transition: background $background, color $color;
+  -o-transition: background $background, color $color;
+  -webkit-transition: background $background, color $color;
+  transition: background $background, color $color;
+}
+
+
+@mixin __flex(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin align_items($property){
+  -webkit-align-items: $property;
+  align-items: $property;
+}
+
+@mixin flex-wrap($property){
+  -webkit-flex-wrap: $property;
+  flex-wrap: $property;
+}
+
+@mixin justify-content($property){
+  -webkit-justify-content: $property;
+  justify-content: $property;
+}
+
+
+$fa-var-info-circle:"";
+$fa-var-user:"\f007";
+$fa-var-child:"\f1ae";
+$fa-var-coffee:"\f0f4";
+$fa-var-binoculars:"\f1e5";
+$fa-var-arrows-alt:"\f0b2";
+$fa-var-bed:"\f236";
+$fa-var-tag:"\f02b";
+
+
+// WP variables
+
+// Responsive widths.
+
+$size__spacing-unit: 1rem;
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+$size__site-margins: calc(10% + 60px);
+$size__site-tablet-content: calc(8 * (100vw / 12) - 28px);
+$size__site-desktop-content: calc(6 * (100vw / 12) - 28px);
+
+// Responsive widths.
+
+$mobile_width: 600px;
+$tablet_width: 768px;
+$desktop_width: 1168px;
+$wide_width: 1379px;
+
+// Font and typographic variables
+
+//$font__body: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+$font__heading: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font__code: Menlo, monaco, Consolas, Lucida Console, monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+
+$font__size_base: 22px;
+$font__size-ratio: 1.125;
+
+$font__size-xxs:   1em / (1.5 * $font__size-ratio);
+$font__size-xs:    1em / (1.25 * $font__size-ratio);
+$font__size-sm:    1em / (1 * $font__size-ratio);
+$font__size-md:    1em * (1 * $font__size-ratio);
+$font__size-lg:    1em * (1.5 * $font__size-ratio);
+$font__size-xl:    1em * (2 * $font__size-ratio);
+$font__size-xxl:   1em * (2.5 * $font__size-ratio);
+$font__size-xxxl:  1em * (3 * $font__size-ratio);
+
+$font__line-height-body: 1.8;
+$font__line-height-pre: 1.6;
+$font__line-height-heading: 1.2;
+$font__line-height-double:  2 * $font__line-height-heading;
+
+
+// Links
+$color__link: #0073aa;
+$color__link-visited: #0073aa;
+$color__link-hover: darken( $color__link, 10% );

@@ -1,0 +1,467 @@
+
+.datepick-popup,
+.mphb-calendar {
+  .datepick-month-header select, .datepick-month-header input {
+    width: auto;
+    display: inline-block;
+    margin: 0em;
+    padding: 0em;
+    border: none;
+    font-size: 100%;
+  }
+
+  .datepick-month-header {
+    select {
+      padding-right: 1.7em;
+    }
+
+  }
+  .datepick-cmd-next,
+  .datepick-cmd-prev {
+    text-indent: 1000px;
+    overflow: hidden;
+    visibility: hidden;
+    &:before {
+      visibility: visible;
+      font: normal normal normal 1rem/1 FontAwesome;
+      @include font-size($font-size__base);
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+      text-indent: 0;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      right: 1em;
+      transform: translateY(-50%);
+    }
+  }
+  .datepick-cmd-prev:before {
+    right: auto;
+    left: 1em;
+  }
+  a.datepick-cmd {
+    padding: 0 1em;
+    position: relative;
+  }
+
+  .datepick-cmd-next:before {
+    font-family: $themo-icon-pack;
+    content: $fa-var-chevron-right;
+    /*content: "";*/
+    float: right;
+  }
+  .datepick-cmd-prev:before {
+    font-family: $themo-icon-pack;
+    content: $fa-var-chevron-left;
+    /*content: "";*/
+    float: left;
+  }
+}
+
+/*
+* Main style
+*/
+$mphb-css-prefix-class: mphb-datepicker-grayscale;
+
+$mphb-screen-sm-min: 48em; //768px
+
+$mphb-datepick-font-size: 90% !default;
+$mphb-datepick-border: 0px solid !default;
+$mphb-datepick-border-radius: 0 !default;
+$mphb-datepick-width: 31.429em !default;
+/*
+* datepick-nav
+*/
+$mphb-datepick-nav-bg: #e5e7e9;
+$mphb-datepick-nav-color: #515151;
+$mphb-datepick-nav-hover-bg: #eeeff1;
+$mphb-datepick-nav-hover-color: #000;
+$mphb-datepick-nav-font-size: inherit;
+$mphb-datepick-nav-font-weight: normal;
+$mphb-datepick-nav-disabled-hover-color: #848484;
+$mphb-datepick-nav-disabled-hover-bg: $mphb-datepick-nav-bg;
+/*
+* datepick-cmd
+*/
+$mphb-datepick-cmd-height: auto !default;
+$mphb-datepick-cmd-line-height: 3.2em;
+$mphb-datepick-ctrl-a-size:85%;
+
+/*
+* datepick-cmd today
+*/
+$mphb-datepick-cmd-today-color:#919191;
+$mphb-datepick-cmd-today-size:15px;
+/*
+* datepick-ctrl
+*/
+$mphb-datepick-ctrl-bg: #fff;
+$mphb-datepick-ctrl-hover-bg: #fff;
+$mphb-datepick-ctrl-hover-color: #484848;
+$mphb-datepick-ctrl-border-color: #e0e0e0;
+$mphb-datepick-ctrl-a-color: #fc5c63;
+/*
+* datepick-month-header
+*/
+$mphb-datepick-month-header-bg: #f1f3f4;
+$mphb-datepick-month-header-height: 2.778em;
+$mphb-datepick-month-header-line-height: 2.778em;
+$mphb-datepick-month-header-color: #717171;
+$mphb-datepick-month-header-font-weight: 400;
+/*
+* datepick-month
+*/
+$mphb-datepick-month-border-color: #e0e0e0;
+$mphb-datepick-month-span-padding: 0 !default;
+$mphb-datepick-month-span-color: #bcbcbc;
+$mphb-datepick-month-span-bg: #fff !default;
+$mphb-datepick-month-a-padding: 0 !default;
+$mphb-datepick-month-a-color: #484848;
+$mphb-datepick-month-a-bg: #fff !default;
+$mphb-datepick-month-th-border: 1px solid #fff !default;
+$mphb-datepick-month-th-bg: #fff !default;
+$mphb-datepick-month-th-color: #808080;
+$mphb-datepick-month-th-font-size: 80% !default;
+$mphb-datepick-month-th-font-weight: 400;
+$mphb-datepick-month-th-padding: 0.5em 0 !default;
+$mphb-datepick-month-tbody-line-height: 2.5em !default;
+//$mphb-datepick-month-td-border: 1px solid #fff !default;
+$mphb-datepick-month-td-border: none;
+$mphb-datepick-month-tr-border: 1px solid #e5e7e9;
+$mphb-datepick-month-td-bg: #fff !default;
+$mphb-datepick-datepick-weekend-bg: #fff !default;
+
+/*
+* highlight
+*/
+//$mphb-datepick-highlight-bg: #484848;
+$mphb-datepick-highlight-bg: #6e6e6e;
+$mphb-datepick-highlight-color: #fff;
+
+//$mphb-calendar-datepick-highlight-bg: #ffbdbf;
+$mphb-calendar-datepick-highlight-bg: #f96d64;
+$mphb-calendar-datepick-highlight-color: #fff;
+/*
+* today
+*/
+$mphb-datepick-datepick-today-bg: #fff !default;
+$mphb-datepick-datepick-today-font-weight: 600 !default;
+$mphb-datepick-datepick-today-color: #363636 !default;
+/*
+* available date
+*/
+//$mphb-available-date-bg: #e0f1be;
+$mphb-available-date-bg: #f4f6f2;
+//$mphb-available-date-color: #484848;
+$mphb-available-date-color: #6e6e6e;
+/*
+* not available date
+*/
+$mphb-not-available-date-bg: #fff !default;
+$mphb-available-not-date-color: #B9BCB9;
+/*
+* check in date
+*/
+$mphb-check-in-date-bg: #808080;
+$mphb-check-in-date-color: #fff;
+/*
+* selectable date
+*/
+$mphb-selectable-date-bg: #dadada !default;
+$mphb-selectable-date-color: #fff !default;
+
+.mphb-calendar .datepick,
+.datepick-popup .datepick {
+  font-size: $mphb-datepick-font-size;
+  border: $mphb-datepick-border;
+  border-radius: $mphb-datepick-border-radius;
+  width: $mphb-datepick-width;
+  max-width: 100%;
+  font-family: inherit;
+}
+
+.mphb-calendar,
+.datepick-popup {
+  a {
+    @include box_shadow(none);
+  }
+  .datepick-nav, .datepick-ctrl {
+    font-size: $mphb-datepick-nav-font-size;
+    font-weight: $mphb-datepick-nav-font-weight;
+  }
+  .datepick-nav {
+    background-color: $mphb-datepick-nav-bg;
+    a {
+      color: $mphb-datepick-nav-color;
+      &:hover {
+        background-color: $mphb-datepick-nav-hover-bg;
+        color: $mphb-datepick-nav-hover-color;
+      }
+      &.datepick-disabled {
+        cursor: not-allowed;
+        color: $mphb-datepick-nav-disabled-hover-color;
+        &:hover {
+          background-color: $mphb-datepick-nav-disabled-hover-bg;
+        }
+      }
+    }
+  }
+  .datepick-ctrl {
+    border-left: 1px solid $mphb-datepick-ctrl-border-color;
+    border-right: 1px solid $mphb-datepick-ctrl-border-color;
+    border-bottom: 1px solid $mphb-datepick-ctrl-border-color;
+    background-color: $mphb-datepick-ctrl-bg;
+    a {
+      color: $mphb-datepick-ctrl-a-color;
+      text-transform: $mphb-datepick-month-header-transform;
+      font-size:$mphb-datepick-ctrl-a-size;
+    }
+    .datepick-cmd:hover {
+      background-color: $mphb-datepick-ctrl-hover-bg;
+      color: $mphb-datepick-ctrl-hover-color;
+    }
+  }
+
+  a.datepick-cmd {
+    height: $mphb-datepick-cmd-height;
+    line-height: $mphb-datepick-cmd-line-height;
+  }
+  a.datepick-cmd.datepick-cmd-today {
+    color:  $mphb-datepick-cmd-today-color;
+    text-transform: $mphb-datepick-month-header-transform;
+    font-size: $mphb-datepick-cmd-today-size;
+  }
+
+  .datepick-month-header {
+    &, & select, & input {
+      height: $mphb-datepick-month-header-height;
+      background-color: $mphb-datepick-month-header-bg;
+      color: $mphb-datepick-month-header-color;
+      font-weight: $mphb-datepick-month-header-font-weight;
+      line-height: $mphb-datepick-month-header-line-height;
+      font-family: inherit;
+      text-transform: $mphb-datepick-month-header-transform;
+    }
+  }
+  .datepick-month {
+    width: 100%;
+    border: 0px solid $mphb-datepick-month-border-color;
+    border-bottom: 1px solid $mphb-datepick-month-border-color;
+    border-right: 1px solid $mphb-datepick-month-border-color;
+    border-left: 1px solid $mphb-datepick-month-border-color;
+
+    @media screen and (min-width: $screen-sm-min) {
+      width: 50%;
+      padding-right: 1px;
+      &.last {
+
+        border-left: 0px solid $mphb-datepick-month-border-color;
+      }
+      &.first {
+        border-right: 0px solid $mphb-datepick-month-border-color;
+      }
+
+      .datepick-month-header {
+        margin-right: -1px;
+      }
+    }
+    & + .datepick-month {
+      @media screen and (min-width: $mphb-screen-sm-min) {
+        border-left: 1px solid $mphb-datepick-month-border-color;
+        padding-right: 0;
+      }
+
+      @media screen and (min-width: $mphb-screen-sm-min) {
+        .datepick-month-header {
+          margin-right: 0;
+          //margin-left: -2px;
+        }
+      }
+    }
+    table {
+      margin: 0 auto;
+      width: 100%;
+    }
+    tbody {
+      line-height: $mphb-datepick-month-tbody-line-height;
+    }
+    th {
+      border: $mphb-datepick-month-th-border;
+      font-size: $mphb-datepick-month-th-font-size;
+      font-weight: $mphb-datepick-month-th-font-weight;
+      padding: $mphb-datepick-month-th-padding;
+
+    }
+    th,
+    th a {
+      background-color: $mphb-datepick-month-th-bg;
+      color: $mphb-datepick-month-th-color;
+    }
+    tr {
+      border-bottom: $mphb-datepick-month-tr-border;
+    }
+    td {
+      background-color: $mphb-datepick-month-td-bg;
+      border: $mphb-datepick-month-td-border;
+    }
+    a {
+      padding: $mphb-datepick-month-a-padding;
+      background-color: $mphb-datepick-month-a-bg;
+      color: $mphb-datepick-month-a-color;
+      //  text-decoration: none;
+    }
+    span {
+      padding: $mphb-datepick-month-span-padding;
+    }
+    td span {
+      color: $mphb-datepick-month-span-color;
+    }
+    td .datepick-weekend {
+      background-color: $mphb-datepick-datepick-weekend-bg;
+    }
+  }
+
+  a {
+    @include transition(0.3s, 0.3s)
+  }
+}
+
+.mphb-calendar.mphb-datepick {
+  .datepick-month td {
+    .mphb-available-date {
+      background-color: $mphb-available-date-bg;
+      color: $mphb-available-date-color;
+    }
+  }
+}
+
+.mphb-calendar.mphb-datepick,
+.datepick-popup .mphb-datepick-popup {
+
+  .datepick-month td {
+    .mphb-not-stay-in-date:not(.mphb-past-date),
+    .mphb-not-available-date {
+      background-color: $mphb-not-available-date-bg;
+      color: $mphb-available-not-date-color;
+      text-decoration: line-through;
+    }
+
+    .mphb-past-date {
+      opacity: 1;
+      background-color: $mphb-datepick-month-td-bg;
+      color: $mphb-datepick-month-span-color;
+    }
+    .mphb-earlier-min-date,
+    .mphb-later-max-date {
+      background-color: $mphb-not-available-date-bg;
+      color: $mphb-datepick-month-span-color;
+      text-decoration: line-through;
+      opacity: 1;
+    }
+
+    .mphb-selectable-date {
+      //background-color: $mphb-selectable-date-bg;
+      //color: $mphb-selectable-date-color;
+    }
+    .datepick-selected {
+      background-color: $mphb-datepick-highlight-bg;
+      color: $mphb-datepick-highlight-color;
+    }
+    .mphb-booked-date {
+      opacity: 1;
+    }
+  }
+}
+
+.datepick-popup {
+  @include box-shadow(0 4px 8px rgba(#333333, 0.15));
+}
+
+.datepick-popup .mphb-datepick-popup {
+  .datepick-month td {
+    .datepick-today {
+      background-color: $mphb-datepick-datepick-today-bg;
+      font-weight: $mphb-datepick-datepick-today-font-weight;
+      color: $mphb-datepick-datepick-today-color;
+    }
+    .mphb-booked-date:not(.mphb-selectable-date) {
+      background-color: $mphb-not-available-date-bg;
+      color: $mphb-available-not-date-color;
+      text-decoration: line-through;
+    }
+    a.datepick-highlight {
+      background-color: $mphb-datepick-highlight-bg;
+      color: $mphb-datepick-highlight-color;
+    }
+  }
+  &.mphb-check-in-datepick {
+    .datepick-month td {
+      .mphb-not-check-in-date:not(.mphb-past-date) {
+        background-color: $mphb-not-available-date-bg;
+        color: $mphb-available-not-date-color;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  &.mphb-check-out-datepick {
+    .datepick-month td {
+      .mphb-not-check-out-date:not(.mphb-past-date) {
+        background-color: $mphb-not-available-date-bg;
+        color: $mphb-available-not-date-color;
+        text-decoration: line-through;
+      }
+      span.mphb-check-in-date:not(.mphb-past-date) {
+        background-color: $mphb-check-in-date-bg;
+        color: $mphb-check-in-date-color;
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+
+.mphb-calendar.mphb-datepick {
+  .datepick-month td {
+    .mphb-booked-date {
+      background-color: $mphb-calendar-datepick-highlight-bg;
+      text-decoration: none;
+	  &.mphb-date-check-in.mphb-date-check-out {
+	    background-color: $mphb-calendar-datepick-highlight-bg;
+	  }
+	  &.mphb-date-check-in {
+	    background: linear-gradient(to bottom right, $mphb-available-date-bg 0, $mphb-available-date-bg 50%, $mphb-calendar-datepick-highlight-bg 50%, $mphb-calendar-datepick-highlight-bg 100%);
+	  }
+	}
+	.mphb-available-date {
+	  &.mphb-date-check-out {
+	    background: linear-gradient(to bottom right, $mphb-calendar-datepick-highlight-bg 0, $mphb-calendar-datepick-highlight-bg 50%, $mphb-available-date-bg 50%, $mphb-available-date-bg 100%);
+	  }
+    }
+  }
+}
+
+.datepick-popup {
+  max-width: 100%;
+  padding: 0 1em;
+  @media screen and (min-width: $mphb-screen-sm-min) {
+    padding: 0;
+  }
+}
+
+/* Date picker remove underline on hover */
+a.mphb-date-cell.mphb-date-selectable:hover, a.mphb-date-cell.mphb-selectable-date:hover, a.mphb-date-cell.mphb-date-selectable:focus, a.mphb-date-cell.mphb-selectable-date:focus {
+  text-decoration: none;
+}
+
+/* Middle Text on Date picker needs to be centered */
+.datepick-popup a.datepick-cmd, .mphb-calendar a.datepick-cmd{
+  padding:0;
+  margin:0;
+}
+
+.datepick-popup a.datepick-cmd, .mphb-calendar a.datepick-cmd{
+  margin:0 0.8%
+}

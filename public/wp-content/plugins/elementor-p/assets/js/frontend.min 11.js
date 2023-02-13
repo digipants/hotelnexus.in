@@ -58,7 +58,7 @@
                 l = i(n(355)),
                 d = i(n(2804)),
                 c = i(n(3384));
-            e.exports = function(e) {
+            e.exports = function (e) {
                 const t = {};
                 this.elementsHandlers = {
                     "accordion.default": () => n.e(209).then(n.bind(n, 8470)),
@@ -73,13 +73,13 @@
                     "wp-widget-media_audio.default": () => n.e(52).then(n.bind(n, 7602))
                 };
                 const addElementsHandlers = () => {
-                        this.elementsHandlers.section = [d.default, ...o.default, l.default, c.default], this.elementsHandlers.container = [...o.default], elementorFrontend.isEditMode() && this.elementsHandlers.container.push(...r.default), this.elementsHandlers.column = a.default, e.each(this.elementsHandlers, ((e, t) => {
-                            const n = e.split(".");
-                            e = n[0];
-                            const i = n[1] || null;
-                            this.attachHandler(e, t, i)
-                        }))
-                    },
+                    this.elementsHandlers.section = [d.default, ...o.default, l.default, c.default], this.elementsHandlers.container = [...o.default], elementorFrontend.isEditMode() && this.elementsHandlers.container.push(...r.default), this.elementsHandlers.column = a.default, e.each(this.elementsHandlers, ((e, t) => {
+                        const n = e.split(".");
+                        e = n[0];
+                        const i = n[1] || null;
+                        this.attachHandler(e, t, i)
+                    }))
+                },
                     isClassHandler = e => {
                         var t;
                         return null === (t = e.prototype) || void 0 === t ? void 0 : t.getUniqueHandlerID
@@ -104,7 +104,7 @@
                             }
                         }))
                     };
-                this.addHandler = function(e, n) {
+                this.addHandler = function (e, n) {
                     const i = n.$element.data("model-cid");
                     let s;
                     if (i) {
@@ -116,7 +116,7 @@
                     i && (t[i][s] = o)
                 }, this.attachHandler = (e, t, n) => {
                     Array.isArray(t) || (t = [t]), t.forEach((t => addHandlerWithHook(e, t, n)))
-                }, this.getHandler = function(e) {
+                }, this.getHandler = function (e) {
                     const t = this.elementsHandlers[e];
                     return isClassHandler(t) ? t : new Promise((e => {
                         t().then((({
@@ -125,9 +125,9 @@
                             e(t)
                         }))
                     }))
-                }, this.getHandlers = function(e) {
+                }, this.getHandlers = function (e) {
                     return elementorCommon.helpers.softDeprecated("getHandlers", "3.1.0", "elementorFrontend.elementsHandler.getHandler"), e ? this.getHandler(e) : this.elementsHandlers
-                }, this.runReadyTrigger = function(t) {
+                }, this.runReadyTrigger = function (t) {
                     if (elementorFrontend.config.is_static) return;
                     const n = jQuery(t),
                         i = n.attr("data-element_type");
@@ -288,7 +288,7 @@
                 }
                 debounce(e, t) {
                     let n;
-                    return function() {
+                    return function () {
                         const i = this,
                             s = arguments,
                             later = () => {
@@ -303,7 +303,7 @@
                         offset: "100%",
                         triggerOnce: !0
                     }, n);
-                    return e.elementorWaypoint((function() {
+                    return e.elementorWaypoint((function () {
                         const e = this.element || this,
                             i = t.apply(e, arguments);
                         return n.triggerOnce && this.destroy && this.destroy(), i
@@ -794,7 +794,7 @@
         3346: (e, t, n) => {
             var i = n(6028);
             e.exports = elementorModules.ViewModule.extend({
-                getDefaultSettings: function() {
+                getDefaultSettings: function () {
                     return {
                         scrollDuration: 500,
                         selectors: {
@@ -804,15 +804,15 @@
                         }
                     }
                 },
-                getDefaultElements: function() {
+                getDefaultElements: function () {
                     return {
                         $scrollable: jQuery(this.getSettings("selectors").scrollable)
                     }
                 },
-                bindEvents: function() {
+                bindEvents: function () {
                     elementorFrontend.elements.$document.on("click", this.getSettings("selectors.links"), this.handleAnchorLinks)
                 },
-                handleAnchorLinks: function(e) {
+                handleAnchorLinks: function (e) {
                     var t, n = e.currentTarget,
                         s = location.pathname === n.pathname;
                     if (location.hostname === n.hostname && s && !(n.hash.length < 2)) {
@@ -825,7 +825,7 @@
                             var o = t.offset().top,
                                 r = elementorFrontend.elements.$wpAdminBar,
                                 a = jQuery(".elementor-section.elementor-sticky--active:visible");
-                            r.length > 0 && (o -= r.height()), a.length > 0 && (o -= Math.max.apply(null, a.map((function() {
+                            r.length > 0 && (o -= r.height()), a.length > 0 && (o -= Math.max.apply(null, a.map((function () {
                                 return jQuery(this).outerHeight()
                             })).get())), e.preventDefault(), o = elementorFrontend.hooks.applyFilters("frontend/handlers/menu_anchor/scroll_top_distance", o), (0, i.isScrollSnapActive)() && elementorFrontend.elements.$body.css("scroll-snap-type", "none"), this.elements.$scrollable.animate({
                                 scrollTop: o
@@ -835,7 +835,7 @@
                         }
                     }
                 },
-                onInit: function() {
+                onInit: function () {
                     elementorModules.ViewModule.prototype.onInit.apply(this, arguments)
                 }
             })
@@ -868,13 +868,13 @@
             AssetsLoader.assets = {
                 script: {
                     dialog: {
-                        src: `${elementorFrontendConfig.urls.assets}lib/dialog/dialog${n}.js?ver=4.9.0`
+                        src: `${elementorFrontendConfig.urls.assets}lib/dialog/dialog${n}.js`
                     },
                     "share-link": {
                         src: `${elementorFrontendConfig.urls.assets}lib/share-link/share-link${n}.js?ver=${elementorFrontendConfig.version}`
                     },
                     swiper: {
-                        src: `${elementorFrontendConfig.urls.assets}lib/swiper/swiper${n}.js?ver=5.3.6`
+                        src: `${elementorFrontendConfig.urls.assets}lib/swiper/swiper${n}.js`
                     }
                 },
                 style: {}
@@ -887,10 +887,10 @@
             class LightboxManager extends elementorModules.ViewModule {
                 static getLightbox() {
                     const e = new Promise((e => {
-                            n.e(723).then(n.t.bind(n, 3896, 23)).then((({
-                                default: t
-                            }) => e(new t)))
-                        })),
+                        n.e(723).then(n.t.bind(n, 3896, 23)).then((({
+                            default: t
+                        }) => e(new t)))
+                    })),
                         t = elementorFrontend.utils.assetsLoader.load("script", "dialog"),
                         i = elementorFrontend.utils.assetsLoader.load("script", "share-link");
                     return Promise.all([e, t, i]).then((() => e))
@@ -919,7 +919,7 @@
                         i = elementorFrontend.isEditMode(),
                         s = i && elementor.$previewContents.find("body").hasClass("elementor-editor__ui-state__color-picker"),
                         o = !!n.closest(".elementor-edit-area").length;
-                    if (!this.isLightboxLink(t)) return void(i && o && e.preventDefault());
+                    if (!this.isLightboxLink(t)) return void (i && o && e.preventDefault());
                     if (e.preventDefault(), i && !elementor.getPreferences("lightbox_in_editor")) return;
                     if (s) return;
                     (this.isOptimizedAssetsLoading() ? await LightboxManager.getLightbox() : elementorFrontend.utils.lightbox).createLightbox(t)
@@ -1213,7 +1213,7 @@
             t.default = n
         },
         9469: e => {
-            e.exports = function() {
+            e.exports = function () {
                 var e, t = Array.prototype.slice,
                     n = {
                         actions: {},
@@ -1228,21 +1228,21 @@
                                 for (a = o.length; a--;)(r = o[a]).callback === i && r.context === s && o.splice(a, 1);
                             else
                                 for (a = o.length; a--;) o[a].callback === i && o.splice(a, 1);
-                    else n[e][t] = []
+                        else n[e][t] = []
                 }
 
                 function _addHook(e, t, i, s, o) {
                     var r = {
-                            callback: i,
-                            priority: s,
-                            context: o
-                        },
+                        callback: i,
+                        priority: s,
+                        context: o
+                    },
                         a = n[e][t];
                     if (a) {
                         var l = !1;
-                        if (jQuery.each(a, (function() {
-                                if (this.callback === i) return l = !0, !1
-                            })), l) return;
+                        if (jQuery.each(a, (function () {
+                            if (this.callback === i) return l = !0, !1
+                        })), l) return;
                         a.push(r), a = function _hookInsertSort(e) {
                             for (var t, n, i, s = 1, o = e.length; s < o; s++) {
                                 for (t = e[s], n = s;
