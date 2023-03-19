@@ -386,7 +386,7 @@ jQuery(window).resize(function($) {
 
 
 jQuery(document).ready(function() {
-    var mainInfo = '<div id="mtAlertBanner" style=""> <div class="l-container"> <a class="mtAlertBannerDetails" href="https://www.hotelnexus.in/covid" target="_blank">COVID-19 update, click here</a></div> <i class="fa fa-close mtAlertBannerCloseTippy"></i> </div>';
+    var mainInfo = '<div id="mtAlertBanner" > <div class="l-container"> <a class="mtAlertBannerDetails" href="https://www.hotelnexus.in/covid" target="_blank">COVID-19 update, click here</a></div> <i class="fa fa-close mtAlertBannerCloseTippy"></i> </div>';
     jQuery('.top-nav').before(mainInfo);
 });
 jQuery('body').on('click', '.mtAlertBannerCloseTippy', function() {

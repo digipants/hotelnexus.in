@@ -1,0 +1,122 @@
+.single {
+  .mphb_room_type {
+    .entry-content {
+      h2 {
+        border-top: 1px solid $color__gray-base;
+        margin: 1.85em 0 $margin-bottom__main;
+        padding: 3.1em 0 0;
+        @include font-size($font-size__h4-px);
+        line-height: (28/16);
+        @media screen and (min-width: $screen-sm-min) {
+          @include font-size($font-size__h3-px);
+          line-height: $line-height__h3;
+        }
+
+      }
+    }
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: calc(1.5 * #{$size__spacing-unit});
+}
+
+.gallery-item {
+  display: inline-block;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+
+  // Loops to enumerate the classes for gallery columns.
+  @for $i from 2 through 9 {
+    .gallery-columns-#{$i} & {
+      max-width: calc((100% - 16px * #{ $i - 1 }) / #{ $i });
+
+      &:nth-of-type(#{$i}n+#{$i}) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+}
+
+.gallery-caption {
+  display: block;
+  font-size: $font__size-xs;
+  font-family: $font__heading;
+  line-height: $font__line-height-pre;
+  margin: 0;
+  padding: ( $size__spacing-unit * .5 );
+}
+
+.gallery-item > div > a {
+  display: block;
+  line-height: 0;
+
+  // Accessibility
+  box-shadow: 0 0 0 0 transparent;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba( $color__link, 1 );
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: calc(1.5 * #{$size__spacing-unit});
+}
+
+.gallery-item {
+  display: inline-block;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+
+  // Loops to enumerate the classes for gallery columns.
+  @for $i from 2 through 9 {
+    .gallery-columns-#{$i} & {
+      max-width: calc((100% - 16px * #{ $i - 1 }) / #{ $i });
+
+      &:nth-of-type(#{$i}n+#{$i}) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+}
+
+.gallery-caption {
+  display: block;
+  font-size: $font__size-xs;
+  font-family: $font__heading;
+  line-height: $font__line-height-pre;
+  margin: 0;
+  padding: ( $size__spacing-unit * .5 );
+}
+
+.gallery-item > div > a {
+  display: block;
+  line-height: 0;
+
+  // Accessibility
+  box-shadow: 0 0 0 0 transparent;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba( $color__link, 1 );
+  }
+}
